@@ -271,6 +271,35 @@
         font-weight: 700;
       }
 
+      .project-links-heading {
+        margin: 0.95rem 0 0.35rem;
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--text);
+      }
+
+      .project-link-list {
+        margin: 0;
+        padding-left: 1.15rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.65;
+      }
+
+      .project-link-list li {
+        margin: 0.15rem 0;
+      }
+
+      .project-link-list a {
+        color: var(--accent);
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .project-link-list a:hover {
+        text-decoration: underline;
+      }
+
       .skills-wrap {
         background: var(--surface);
         border: 1px solid var(--line);
@@ -493,25 +522,18 @@
                 oferta digital de la marca y simplificar la navegación para distintos perfiles de
                 cliente.
               </p>
-              <a class="project-link" href="https://blackroot.com.ar" target="_blank" rel="noreferrer">
-                Ver sitio institucional
-              </a>
-              <a
-                class="project-link"
-                href="https://tienda.blackroot.com.ar"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Ver tienda online
-              </a>
-              <a
-                class="project-link"
-                href="https://comercial.blackroot.com.ar"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Ver sección comercial
-              </a>
+              <p class="project-links-heading">Ver</p>
+              <ul class="project-link-list">
+                <li>
+                  <a href="https://blackroot.com.ar" target="_blank" rel="noreferrer">Hub</a>
+                </li>
+                <li>
+                  <a href="https://tienda.blackroot.com.ar" target="_blank" rel="noreferrer">Tienda online</a>
+                </li>
+                <li>
+                  <a href="https://comercial.blackroot.com.ar" target="_blank" rel="noreferrer">Sección comercial</a>
+                </li>
+              </ul>
             </div>
           </article>
 
