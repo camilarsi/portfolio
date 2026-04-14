@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Camila Silva | Desarrollo web para marcas e instituciones</title>
+    <meta
+      name="description"
+      content="Portfolio de Camila Silva, desarrolladora web. Sitios claros, elegantes y funcionales para marcas, agencias y emprendedores."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f8f7f4;
+        --surface: #ffffff;
+        --text: #1d1b19;
+        --muted: #5f5b54;
+        --line: #e4e0d9;
+        --accent: #1f7a6f;
+        --accent-soft: #e7f4f1;
+        --shadow: 0 12px 34px rgba(30, 33, 28, 0.08);
+        --radius: 22px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: radial-gradient(circle at 12% 0%, #ffffff 0%, var(--bg) 45%);
+        color: var(--text);
+        font-family: "Manrope", sans-serif;
+      }
+
+      main.container {
+        padding-bottom: 6rem;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .container {
+        width: min(1080px, calc(100% - 2.5rem));
+        margin: 0 auto;
+      }
+
+      .header {
+        padding: 2rem 0 1.5rem;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.75rem 1.25rem;
+        padding: 0.85rem 1.15rem;
+        background: rgba(255, 255, 255, 0.76);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        backdrop-filter: blur(10px);
+      }
+
+      .nav-brand {
+        min-width: 0;
+        flex: 1 1 200px;
+      }
+
+      .name {
+        font-size: 0.95rem;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        line-height: 1.25;
+      }
+
+      .nav-tagline {
+        margin: 0.28rem 0 0;
+        font-size: 0.78rem;
+        font-weight: 500;
+        color: var(--muted);
+        line-height: 1.35;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 0.35rem 0.55rem;
+      }
+
+      .nav-sep {
+        color: #c9c4bc;
+        font-size: 0.85rem;
+        user-select: none;
+      }
+
+      .contact-link {
+        text-decoration: none;
+        font-size: 0.87rem;
+        color: var(--muted);
+        transition: color 0.2s ease;
+      }
+
+      .contact-link:hover {
+        color: var(--accent);
+      }
+
+      .hero {
+        padding: 2.5rem 0 2rem;
+      }
+
+      .hero-card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: calc(var(--radius) + 6px);
+        padding: clamp(1.4rem, 4vw, 2.8rem);
+        box-shadow: var(--shadow);
+      }
+
+      .hero-inner {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(120px, 235px);
+        gap: clamp(1.25rem, 4vw, 2.75rem);
+        align-items: center;
+      }
+
+      .hero-copy {
+        min-width: 0;
+      }
+
+      .hero-photo-wrap {
+        margin: 0;
+        justify-self: end;
+        width: min(235px, 39vw);
+        aspect-ratio: 1 / 1;
+        border-radius: 22px;
+        border: 1px solid var(--line);
+        background: #f2f1ee;
+        box-shadow: 0 10px 24px rgba(30, 33, 28, 0.08);
+        overflow: hidden;
+        display: grid;
+        place-items: center;
+        opacity: 0.95;
+      }
+
+      .hero-photo {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        padding: 0.36rem 0.8rem;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: #175f56;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 1rem 0 0.8rem;
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        line-height: 1.08;
+        font-size: clamp(2rem, 4.4vw, 3.6rem);
+        max-width: 20ch;
+      }
+
+      .hero p {
+        margin: 0;
+        max-width: 62ch;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      .section {
+        padding: 1.4rem 0 1.2rem;
+      }
+
+      .section-title {
+        font-family: "Fraunces", serif;
+        font-size: clamp(1.45rem, 2.2vw, 2rem);
+        font-weight: 500;
+        margin: 0 0 1.3rem;
+      }
+
+      .projects {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.35rem;
+        width: 100%;
+      }
+
+      .project {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+      }
+
+      .project-media {
+        padding: 0.85rem 1rem 0.8rem;
+        background: linear-gradient(180deg, #fbfaf8, #f3f1ec);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .project-preview {
+        aspect-ratio: 16 / 10;
+        width: 100%;
+        object-fit: cover;
+        display: block;
+        border-radius: calc(var(--radius) - 6px);
+        border: 1px solid rgba(29, 27, 25, 0.06);
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.65) inset;
+      }
+
+      .project-video {
+        aspect-ratio: 16 / 10;
+        width: 100%;
+        object-fit: cover;
+        display: none;
+        background: #ebe9e4;
+        border-radius: calc(var(--radius) - 6px);
+        border: 1px solid rgba(29, 27, 25, 0.06);
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.65) inset;
+      }
+
+      .project-content {
+        padding: 1rem 1rem 1.1rem;
+      }
+
+      .project h3 {
+        margin: 0 0 0.5rem;
+        font-size: 1.03rem;
+      }
+
+      .project p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.65;
+      }
+
+      .project-link {
+        display: inline-flex;
+        margin-top: 0.9rem;
+        color: var(--accent);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+
+      .skills-wrap {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 1.15rem 1.2rem 1.25rem;
+        box-shadow: var(--shadow);
+      }
+
+      .skill-groups {
+        display: flex;
+        flex-direction: column;
+        gap: 1.35rem;
+      }
+
+      .skill-group-title {
+        margin: 0 0 0.55rem;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: #175f56;
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+      }
+
+      .skill {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 0.46rem 0.8rem;
+        background: #fffdfa;
+        font-size: 0.86rem;
+        color: #3f3a33;
+      }
+
+      .wa-float {
+        position: fixed;
+        right: 1rem;
+        bottom: 1rem;
+        width: 71px;
+        height: 71px;
+        border-radius: 50%;
+        border: 0;
+        display: grid;
+        place-items: center;
+        background: #25d366;
+        box-shadow: 0 10px 24px rgba(27, 143, 74, 0.3);
+        text-decoration: none;
+        color: white;
+        transition: transform 0.2s ease;
+      }
+
+      .wa-float svg {
+        display: block;
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
+      }
+
+      .wa-float:hover {
+        transform: translateY(-2px) scale(1.03);
+      }
+
+      .wa-float:focus-visible {
+        outline: 3px solid #b9eed0;
+        outline-offset: 3px;
+      }
+
+      @media (max-width: 899px) {
+        .project-media {
+          padding: 1rem 1rem 0.95rem;
+        }
+
+        .project-preview,
+        .project-video {
+          aspect-ratio: 10 / 19;
+          object-fit: cover;
+          object-position: top center;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .hero-inner {
+          grid-template-columns: 1fr;
+          justify-items: center;
+          text-align: center;
+        }
+
+        .hero-photo-wrap {
+          order: -1;
+          justify-self: center;
+          width: min(255px, 70vw);
+        }
+
+        h1 {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .hero p {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      @media (min-width: 900px) {
+        .project-video {
+          display: block;
+        }
+
+        .project-preview {
+          display: none;
+        }
+
+        .project-preview,
+        .project-video {
+          aspect-ratio: 16 / 9;
+        }
+
+        .project-content {
+          padding: 1.35rem 1.5rem 1.45rem;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .nav {
+          border-radius: 20px;
+          align-items: flex-start;
+        }
+
+        .nav-links {
+          width: 100%;
+          justify-content: flex-start;
+          padding-top: 0.55rem;
+          border-top: 1px solid var(--line);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header container">
+      <nav class="nav">
+        <div class="nav-brand">
+          <div class="name">Camila Silva · Desarrolladora Web</div>
+          <p class="nav-tagline">Disponible para proyectos freelance.</p>
+        </div>
+        <div class="nav-links">
+          <a class="contact-link" href="mailto:csilva.dev93@gmail.com">csilva.dev93@gmail.com</a>
+          <span class="nav-sep" aria-hidden="true">·</span>
+          <a class="contact-link" href="https://github.com/camilarsi" target="_blank" rel="noreferrer">GitHub</a>
+          <span class="nav-sep" aria-hidden="true">·</span>
+          <a
+            class="contact-link"
+            href="https://www.linkedin.com/in/camila-roc%C3%ADo-silva-12473780/"
+            target="_blank"
+            rel="noreferrer"
+            >LinkedIn</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div class="hero-card">
+          <div class="hero-inner">
+            <div class="hero-copy">
+              <span class="eyebrow">Camila Silva</span>
+              <h1>Desarrolladora Web</h1>
+              <p>
+                Desarrollo sitios web bellos y amigables en todos los dispositivos, bien posicionados
+                en buscadores y fáciles de actualizar, para comunicar, generar conexión con los
+                usuarios y convertir. También creo aplicaciones mobile para Android y iOS, que extienden la funcionalidad del negocio, complementan la presencia digital y brindan acceso al servicio en todo momento y lugar.
+              </p>
+            </div>
+            <figure class="hero-photo-wrap">
+              <img
+                class="hero-photo"
+                src="assets/media/portfolio.png"
+                alt="Camila Silva, desarrolladora web."
+                width="480"
+                height="600"
+                loading="eager"
+                decoding="async"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="proyectos">
+        <h2 class="section-title">Proyectos recientes</h2>
+        <div class="projects">
+          <article class="project">
+            <div class="project-media">
+              <img
+                class="project-preview"
+                src="assets/media/blackroot-mobile.png"
+                alt="Blackroot, captura en mobile"
+                loading="lazy"
+              />
+              <video
+                class="project-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-label="Demo de Blackroot"
+              >
+                <source src="assets/media/ecosistema-blackroot.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="project-content">
+              <h3>Blackroot · Ecosistema de marca</h3>
+              <p>
+                Desarrollo de landing hub que dirige usuarios minoristas y mayoristas + ecommerce + sección comercial para ordenar la
+                oferta digital de la marca y simplificar la navegación para distintos perfiles de
+                cliente.
+              </p>
+              <a class="project-link" href="https://blackroot.com.ar" target="_blank" rel="noreferrer">
+                Ver sitio institucional
+              </a>
+              <a
+                class="project-link"
+                href="https://tienda.blackroot.com.ar"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver tienda online
+              </a>
+              <a
+                class="project-link"
+                href="https://comercial.blackroot.com.ar"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver sección comercial
+              </a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-media">
+              <img
+                class="project-preview"
+                src="assets/media/origencore-mobile.png"
+                alt="Origen Core, captura en mobile"
+                loading="lazy"
+              />
+              <video
+                class="project-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-label="Demo de Origen Core"
+              >
+                <source src="assets/media/origencoreo.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="project-content">
+              <h3>Origen Core · Landing corporativa</h3>
+              <p>
+                Diseño y desarrollo de una landing enfocada en comunicar servicios con claridad,
+                reforzar confianza de marca y facilitar el contacto comercial.
+              </p>
+              <a class="project-link" href="https://origencore.com" target="_blank" rel="noreferrer">
+                Ver sitio en vivo
+              </a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-media">
+              <img
+                class="project-preview"
+                src="assets/media/cultura-incandescente-mobile.png"
+                alt="Cultura Incandescente, captura en mobile"
+                loading="lazy"
+              />
+              <video
+                class="project-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-label="Demo de Cultura Incandescente"
+              >
+                <source src="assets/media/cultura-incandescente.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="project-content">
+              <h3>Cultura Incandescente · Ecommerce de merchandise oficial</h3>
+              <p>
+                Configuración de plataforma, integración de pasarelas de pago y logística de envíos, experiencia de compra optimizada. Dashboard automatizado de 
+reportes de ventas mensuales en Google Sheets.
+              </p>
+              <a
+                class="project-link"
+                href="https://culturaincandescente.elplandelamariposa.com.ar"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver sitio en vivo
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="habilidades">
+        <h2 class="section-title">Habilidades</h2>
+        <div class="skills-wrap">
+          <div class="skill-groups">
+            <div class="skill-group">
+              <h3 class="skill-group-title">Frontend</h3>
+              <div class="skills">
+                <span class="skill">HTML/CSS</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">React</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3 class="skill-group-title">Plataformas</h3>
+              <div class="skills">
+                <span class="skill">Tiendanube</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3 class="skill-group-title">Servicios</h3>
+              <div class="skills">
+                <span class="skill">Web institucional</span>
+                <span class="skill">Landing</span>
+                <span class="skill">Ecommerce / Tienda online</span>
+                <span class="skill">Diseño UI/UX</span>
+                <span class="skill">SEO on-page</span>
+                <span class="skill">Apps multiplataformas</span>
+                <span class="skill">Mantenimiento y soporte</span>
+              
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3 class="skill-group-title">Integraciones</h3>
+              <div class="skills">
+                <span class="skill">APIs</span>
+                <span class="skill">Pasarelas de pago</span>
+                <span class="skill">Google Sheets</span>
+                <span class="skill">Automatización</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3 class="skill-group-title">Mobile</h3>
+              <div class="skills">
+                <span class="skill">Flutter (iOS, Android & Web)</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3 class="skill-group-title">DevOps</h3>
+              <div class="skills">
+                <span class="skill">Control de versiones (Git)</span>
+                <span class="skill">Hosting</span>
+                <span class="skill">Dominios</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3 class="skill-group-title">Soporte</h3>
+              <div class="skills">
+                <span class="skill">Mantenimiento</span>
+                <span class="skill">Actualización de contenidos</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <a
+      class="wa-float"
+      href="https://wa.me/542494211477"
+      aria-label="Contactar por WhatsApp"
+      target="_blank"
+      rel="noreferrer"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path
+          fill="currentColor"
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.075-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+        />
+      </svg>
+    </a>
+  </body>
+</html>
